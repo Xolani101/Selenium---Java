@@ -35,6 +35,12 @@ public class Main {
         );
         System.out.println("Bottom Button Text: " + bottomButton.getAttribute("value"));
 
+        WebElement image = driver.findElement(By.id("imageButton"));
+        System.out.println("Image Button Alt Text: " + image.getAttribute("alt"));
+
+        WebElement buttonClick = driver.findElement(By.cssSelector("input[value='Click!']"));
+        System.out.println("Button Click Text: " + buttonClick.getAttribute("value"));
+
         driver.quit();
     }
 }
