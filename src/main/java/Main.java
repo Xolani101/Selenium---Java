@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.locators.RelativeLocator;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -55,6 +56,12 @@ public class Main {
         if (!cheeseRadioButton.isSelected()) {
             cheeseRadioButton.click();
         }
+
+        Select radioButtonsSelect = new Select(driver.findElement(By.name("select_with_spaces")));
+        radioButtonsSelect.selectByVisibleText("Two");
+
+        WebElement uploadFileElement = driver.findElement(By.id("upload"));
+        uploadFileElement.sendKeys("C:\\Users\\Xolani\\OneDrive\\Pictures\\20240524_135430.jpg");
 
         bottomButton.click();
 
